@@ -1,0 +1,14 @@
+{
+  "name": "easy-objects",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "arrays",
+    "objects"
+  ],
+  "author": "Juan Jose Zeledon Benavides",
+  "license": "MIT",
+  "description": "A simple utility library for working with arrays and objects in JavaScript",
+  "type": "module"
+}
