@@ -17,7 +17,7 @@ import { merge } from './src/objectUtils/merge.js'
 import { omit } from './src/objectUtils/omit.js'
 import { pick } from './src/objectUtils/pick.js'
 
-const a = {
+const arr = {
   average,
   deleteAtIndex,
   difference,
@@ -30,7 +30,7 @@ const a = {
   unique
 }
 
-const o = {
+const obj = {
   merge,
   omit,
   pick

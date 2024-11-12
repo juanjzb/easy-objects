@@ -33,6 +33,19 @@ npm install easy-objects
 
 ## API Reference
 
+This package exports 2 variables:
+
+- one variable for arrays named 'arr'
+- one variable for objects named 'obj'
+
+Every variable contains methods definition. Methods are going to be listed down below.
+
+```javascript
+import {arr, obj} from 'easy-objects'
+
+console.log(arr.sum([1,2,3])) // returns 6
+```
+
 ### Array Functions
 
 #### average(arr:number[])
@@ -50,8 +63,9 @@ The average value of the elements in the input array.
 **Example:**
 
 ```javascript
+import {arr} from 'easy-objects'
 const numbers = [1, 2, 3, 4, 5];
-const averageValue = average(numbers);
+const averageValue = arr.average(numbers);
 console.log(averageValue); // Output: 3
 ```
 
@@ -71,8 +85,9 @@ A new array with the element at the specified index removed. If the index is out
 **Example:**
 
 ```javascript
+import {arr} from 'easy-objects'
 const numbers = [1, 2, 3, 4, 5];
-const newArray = deleteAtIndex(numbers, 2);
+const newArray = arr.deleteAtIndex(numbers, 2);
 console.log(newArray); // Output: [1, 2, 4, 5]
 ```
 
@@ -92,11 +107,12 @@ A new array containing elements present in `arr1` but not in any of the `rest` a
 **Example:**
 
 ```javascript
+import {arr} from 'easy-objects'
 const array1 = [1, 2, 3, 4, 5];
 const array2 = [3, 4, 5, 6, 7];
 const array3 = [1, 2, 3];
 
-const differenceArray = difference(array1, array2, array3);
+const differenceArray = arr.difference(array1, array2, array3);
 console.log(differenceArray); // Output: [1, 2]
 ```
 
@@ -115,11 +131,12 @@ A new array containing elements present in all input arrays.
 **Example:**
 
 ```javascript
+import {arr} from 'easy-objects'
 const array1 = [1, 2, 3, 4, 5];
 const array2 = [3, 4, 5, 6, 7];
 const array3 = [1, 2, 3];
 
-const intersectionArray = intersection(array1, array2, array3);
+const intersectionArray = arr.intersection(array1, array2, array3);
 console.log(intersectionArray); // Output: [3]
 ```
 
@@ -139,13 +156,14 @@ Checks if all elements in an array are of a specific type.
 **Example:**
 
 ```javascript
+import {arr} from 'easy-objects'
 const numbers = [1, 2, 3, 4, 5];
 const strings = ['a', 'b', 'c'];
 const mixedArray = [1, 'a', true];
 
-console.log(isType(numbers, 'number')); // Output: true
-console.log(isType(strings, 'string')); // Output: true
-console.log(isType(mixedArray, 'number')); // Output: false
+console.log(arr.isType(numbers, 'number')); // Output: true
+console.log(arr.isType(strings, 'string')); // Output: true
+console.log(arr.isType(mixedArray, 'number')); // Output: false
 ```
 
 #### isUnique(arr)
@@ -163,11 +181,12 @@ Checks if all elements in an array are unique.
 **Example:**
 
 ```javascript
+import {arr} from 'easy-objects'
 const uniqueArray = [1, 2, 3, 4, 5];
 const nonUniqueArray = [1, 2, 3, 2, 4];
 
-console.log(isUnique(uniqueArray)); // Output: true
-console.log(isUnique(nonUniqueArray)); // Output: false
+console.log(arr.isUnique(uniqueArray)); // Output: true
+console.log(arr.isUnique(nonUniqueArray)); // Output: false
 ```
 
 #### shuffle(array)
@@ -185,8 +204,9 @@ The shuffled array.
 **Example:**
 
 ```javascript
+import {arr} from 'easy-objects'
 const numbers = [1, 2, 3, 4, 5];
-const shuffledNumbers = shuffle(numbers);
+const shuffledNumbers = arr.shuffle(numbers);
 console.log(shuffledNumbers); // Output: A randomly shuffled array
 ```
 
@@ -206,12 +226,13 @@ The sorted array.
 **Example:**
 
 ```javascript
+import {arr} from 'easy-objects'
 const numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
 
-const ascendingNumbers = sort(numbers);
+const ascendingNumbers = arr.sort(numbers);
 console.log(ascendingNumbers); // Output: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
 
-const descendingNumbers = sort(numbers, 'desc');
+const descendingNumbers = arr.sort(numbers, 'desc');
 console.log(descendingNumbers); // Output: [9, 6, 5, 5, 5, 4, 3, 3, 2, 1, 1]
 ```
 
@@ -230,8 +251,9 @@ The sum of all elements in the array.
 **Example:**
 
 ```javascript
+import {arr} from 'easy-objects'
 const numbers = [1, 2, 3, 4, 5];
-const sumOfNumbers = sum(numbers);
+const sumOfNumbers = arr.sum(numbers);
 console.log(sumOfNumbers); // Output: 15
 ```
 
@@ -250,8 +272,9 @@ A new array containing only unique elements from the input array.
 **Example:**
 
 ```javascript
+import {arr} from 'easy-objects'
 const numbers = [1, 2, 3, 2, 1, 4, 5, 4];
-const uniqueNumbers = unique(numbers);
+const uniqueNumbers = arr.unique(numbers);
 console.log(uniqueNumbers); // Output: [1, 2, 3, 4, 5]
 ```
 
@@ -272,11 +295,12 @@ A new object containing the merged properties of all input objects.
 **Example:**
 
 ```javascript
+import {obj} from 'easy-objects'
 const obj1 = { a: 1, b: 2 };
 const obj2 = { c: 3, d: 4 };
 const obj3 = { e: 5 };
 
-const mergedObject = merge(obj1, obj2, obj3);
+const mergedObject = obj.merge(obj1, obj2, obj3);
 console.log(mergedObject); // Output: { a: 1, b: 2, c: 3, d: 4, e: 5 }
 ```
 
@@ -296,8 +320,9 @@ A new object with the specified keys omitted.
 **Example:**
 
 ```javascript
+import {obj} from 'easy-objects'
 const person = { name: 'Alice', age: 30, city: 'New York', job: 'Engineer' };
-const personWithoutJobAndCity = omit(person, ['job', 'city']);
+const personWithoutJobAndCity = obj.omit(person, ['job', 'city']);
 console.log(personWithoutJobAndCity); // Output: { name: 'Alice', age: 30 }
 ```
 
@@ -317,8 +342,9 @@ A new object containing only the specified keys and their corresponding values.
 **Example:**
 
 ```javascript
+import {obj} from 'easy-objects'
 const person = { name: 'Alice', age: 30, city: 'New York', job: 'Engineer' };
-const personWithNameAndAge = pick(person, ['name', 'age']);
+const personWithNameAndAge = obj.pick(person, ['name', 'age']);
 console.log(personWithNameAndAge); // Output: { name: 'Alice', age: 30 }
 ```
 
